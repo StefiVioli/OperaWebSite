@@ -1,0 +1,39 @@
+﻿@model OperaWebSite.Models.Opera
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Opera Detail</legend>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="display-text">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Composer)
+        </div>
+        <div class="display-text">
+            @Html.DisplayFor(model => model.Composer)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Year)
+        </div>
+        <div class="display-text">
+            @Html.DisplayFor(model => model.Year)
+        </div>
+
+    </fieldset>
+    <p>
+        @Html.ActionLink("Back to List", "Index", "Opera")
+    </p>
+
+</body>
+</html>

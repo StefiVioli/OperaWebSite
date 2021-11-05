@@ -1,0 +1,42 @@
+﻿@model OperaWebSite.Models.Opera
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h2>Opera Delete</h2>
+    <p>Are you sure you want to delete this Opera?</p>
+
+    @using (Html.BeginForm("Delete", "Opera", FormMethod.Post))
+    {
+        <fieldset>
+            <legend>Opera Detail</legend>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Title)
+            </div>
+            <div class="display-text">
+                @Html.DisplayFor(model => model.Title)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Composer)
+            </div>
+            <div class="display-text">
+                @Html.DisplayFor(model => model.Composer)
+            </div>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Delete" />
+        </p>
+    }
+    <p>
+        @Html.ActionLink("Back to List", "Index", "Opera")
+    </p>
+
+</body>
+</html>
