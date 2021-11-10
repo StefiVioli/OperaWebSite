@@ -1,18 +1,15 @@
 ﻿@model OperaWebSite.Models.Opera
+<!DOCTYPE html>
 
-@{
-    ViewBag.Title = "Edit";
-}
-
-
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
 <body>
-    <h2>Opera Edit</h2>
-    <p>Are you sure you want to edit this Opera?</p>
-    @using (Html.BeginForm("Edit", "Opera", FormMethod.Post))
+
+    @using (Html.BeginForm("Create", "Opera", FormMethod.Post))
     {
-
-        @Html.HiddenFor(model => model.OperaId)
-
         <div>
             @Html.LabelFor(model => model.Title)
             @Html.EditorFor(model => model.Title)
@@ -30,11 +27,11 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Create" />
         </p>
-
     }
-    @Html.ActionLink("Back to List", "Index", "Opera")
+    @Html.ActionLink("Back to List","Index","Opera")
+
 
 </body>
-
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <header>
+        <section id="banner">
+              <h1>Bienvenido al sistema Web del Teatro Colón</h1>
+        </section>
+        <section id="login">Login</section>
+    </header>
+    <nav>
+        <p>Menú</p>
+        <ul>
+           
+            <li class="lista"> @Html.ActionLink("Inicio", "Index", "Home")</li>
+
+            <li class="lista"> @Html.ActionLink("Operas", "Index", "Opera")</li>
+
+            <li class="lista"> @Html.ActionLink("Empleados", "Index", "Empleado")</li>
+        </ul>
+
+    </nav>
+    <main>
+        <aside id="izq">
+            @if (IsSectionDefined("Izq"))
+            {
+                @RenderSection("Izq")
+            }
+            else
+            {
+               <br /> <h2>Cerrito 628 <br /><br /><br /> 4378-7100</h2>
+            }
+        </aside>
+        <article>
+            @RenderBody()
+        </article>
+        <aside id="der">
+            @if (IsSectionDefined("Der"))
+            {
+                @RenderSection("Der")
+            }
+            else
+            {
+                <div id="img4">
+                    <img src="~/images/exterior1.jpg" height="30" />
+                </div>
+                <div id="img5">
+                    <img src="~/images/exterior2.jpg" height="50" />
+                </div>
+                <div id="img6">
+                    <img src="~/images/exterior3.jpg" height="50" />
+                </div>
+            }
+        </aside>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>

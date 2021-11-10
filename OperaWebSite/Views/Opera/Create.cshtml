@@ -1,12 +1,9 @@
 ﻿@model OperaWebSite.Models.Opera
 
-<!DOCTYPE html>
+@{
+    ViewBag.Title = "Create";
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
 <body>
     @using (Html.BeginForm("Create", "Opera", FormMethod.Post))
     {
@@ -31,8 +28,5 @@
         </p>
     }
     @Html.ActionLink("Back to List", "Index", "Opera")
-
-
-
 </body>
-</html>
+

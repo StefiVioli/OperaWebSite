@@ -1,4 +1,40 @@
-﻿
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+@section Izq
+    {
+    <br />
+    <br />
+    <a href="https://es.wikipedia.org/wiki/Las_bodas_de_F%C3%ADgaro">Las Bodas de Fígaro</a>
+    <br />
+    <br />
+    <a href="https://es.wikipedia.org/wiki/Don_Giovanni">Don Giovanni</a>
+    <br />
+    <br />
+    <a href="https://es.wikipedia.org/wiki/Cos%C3%AC_fan_tutte">Così fan tutte</a>
+
+}
+
+@section Der
+    {
+    <div id="img1">
+        <img src="../images/Mozart.jpg" /><br /><a href="https://es.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart">Wolfgang_Amadeus_Mozart</a>
+    </div>
+    <div id="img2">
+        <img src="../images/chopin.jpg" /><br /><a href="https://es.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin">Frédéric Chopin</a>
+    </div>
+    <div id="img3">
+        <img src="../images/beethoven.jpg" /><br /><a href="https://es.wikipedia.org/wiki/Ludwig_van_Beethoven">Ludwig van Beethoven</a>
+    </div>
+}
+
+
+
+
+
+
 @model IEnumerable<OperaWebSite.Models.Opera>
 
 <!DOCTYPE html>
@@ -19,23 +55,23 @@
         </tr>
         @foreach (var item in Model)
         {
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.Title)</td>
-        <td>@Html.DisplayFor(modelItem => item.Composer)</td>
-        <td>@Html.DisplayFor(modelItem => item.Year)</td>
-        <td>
-            @Html.ActionLink("Detail", "Detail", new { id = item.OperaId })
-        </td>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Composer)</td>
+                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", new { id = item.OperaId })
+                </td>
 
-        <td>
-            @Html.ActionLink("Delete", "Delete", new { id = item.OperaId })
-        </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.OperaId })
+                </td>
 
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.OperaId })
-        </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.OperaId })
+                </td>
 
-    </tr>
+            </tr>
         }
     </table>
 

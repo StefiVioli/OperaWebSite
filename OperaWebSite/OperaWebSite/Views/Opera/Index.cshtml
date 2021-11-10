@@ -1,0 +1,46 @@
+﻿@model IEnumerable<OperaWebSite.Models.Opera>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>@Html.ActionLink("Create New", "Create", "Opera")</p>
+    @using (Html.BeginForm("SearchByYear", "Opera", FormMethod.Get))
+    {
+            @Html.TextBox("year", 0)
+            
+            <input type="submit" value="Get" />
+    }
+
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Composer)</th>
+            <th>@Html.DisplayNameFor(model => model.Year)</th>
+            <th>Details</th>
+            <th>Deletes</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Composer)</td>
+                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", new { id = item.OperaId })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.OperaId })
+                </td>
+
+      
+            </tr>
+        }
+    </table>
+
+
+</body>
+</html>

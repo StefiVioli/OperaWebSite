@@ -1,0 +1,99 @@
+﻿* {
+    margin: 2.5px;
+    padding: 1.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*body {
+    width: 750px;
+    height: 750px;
+    margin: auto;
+    background-color: #FF4754;
+}
+
+html {
+    background-color: #EAE3F3;
+}*/
+
+/*header {
+    background-color: #C2095A;
+    width: 750px;
+    height: 250px;
+}*/
+
+footer {
+    background-color: #B47AEA;
+    width: 1300px;
+    height: 50px;
+    /*float: left;*/
+    clear: both;
+    /*  align-self: flex-end;*/
+}
+
+main {
+    /*background-color: #DC6A92;*/
+    width: 1300px;
+    height: 250px;
+    /*display: flex;*/
+}
+
+nav {
+    background-color: #ECC8AF;
+    width: 1300px;/*width: 750px;*/
+    height: 150px;
+    float: left;
+}
+
+section#banner {
+    background-image: url(..//images/bannerColon.jpg);
+    width: 1000px;
+    height: 250px;
+    float: left;
+    color: beige;
+    text-align: center;
+}
+
+section#login {
+    background-color: #FF5C92;
+    width: 290px;
+    height: 250px;
+    float: left;
+}
+
+aside#izq {
+    width: 30%;
+    height: 1200px;
+    background-color: #DE2B4C;
+    float: left;
+    font-size: 25px;
+    text-align:center;
+   
+}
+
+article {
+    width: 33%;
+    height:1200px;
+    background-color: rgb(216, 83, 89);
+    float: left;
+}
+
+aside#der {
+    width: 35%;
+    height: 1200px;
+    background-color: #B75D69;
+    float: right;
+   
+}
+
+img {
+    height: 80%;
+    width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.lista {
+    border: 1.5px solid brown;
+    height: 20px;
+    width: 100px;
+}

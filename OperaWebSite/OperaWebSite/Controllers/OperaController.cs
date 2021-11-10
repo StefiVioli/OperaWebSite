@@ -1,25 +1,21 @@
-﻿using OperaWebSite.Data;
-using OperaWebSite.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Diagnostics;
-using OperaWebSite.Filters;
 
+using OperaWebSite.Models;
+using OperaWebSite.Data;
+using System.Data.Entity;
 namespace OperaWebSite.Controllers
 {
-    [MyFilterAction]
     public class OperaController : Controller
     {
-
         //Crear instancia del dbcontext
 
         private OperaDbContext context = new OperaDbContext();
 
-        // GET: Opera
+        // GET: Opera o /Opera/Index
         public ActionResult Index()
         {
             //Traer todas Operas usando EF
@@ -28,6 +24,7 @@ namespace OperaWebSite.Controllers
             //el controller retorna una vista "Index" con la lista de operas
             return View("Index", operas);
         }
+
 
         //Creamos dos métodos para la inserción de la opera en la DB
 
@@ -45,7 +42,6 @@ namespace OperaWebSite.Controllers
         //Segundo Create es por Post para insertar la nueva opera en la base
         //cuando el usuario en la vista Create hace click en enviar
         //Opera/Create -->POST
-
         [HttpPost]
         public ActionResult Create(Opera opera)
         {
@@ -56,14 +52,12 @@ namespace OperaWebSite.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View("Create", opera);
+            return View("Create", opera); 
         }
 
         //GET
         // Opera/Detail/id
         // Opera/Detail/2
-        [HttpGet]//opcional porque el default es GET
-
         public ActionResult Detail(int id)
         {
             Opera opera = context.Operas.Find(id);
@@ -76,14 +70,11 @@ namespace OperaWebSite.Controllers
             {
                 return HttpNotFound();
             }
-
-
-
         }
 
         //GET /Opera/Delete/Id
         [HttpGet]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id) 
         {
             Opera opera = context.Operas.Find(id);
 
@@ -101,7 +92,7 @@ namespace OperaWebSite.Controllers
         // /Opera/Delete
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id) 
         {
             Opera opera = context.Operas.Find(id);
 
@@ -111,39 +102,18 @@ namespace OperaWebSite.Controllers
             return RedirectToAction("Index");
 
         }
-        //se puede agregar un if
-        // /Opera/Edit
-        [HttpGet]
-        public ActionResult Edit(int id)
+
+        public ActionResult SearchByYear(int year)
         {
-            Opera opera = context.Operas.Find(id);
-
-            if (opera != null)
+            if (year==0)
             {
-                return View("Edit", opera);
-            }
-            else
-            {
-                return HttpNotFound();
-            }
-
-        }
-
-        [HttpPost]
-        [ActionName("Edit")]
-        public ActionResult EditConfirmed(Opera opera)
-        {
-
-            if (ModelState.IsValid)
-            {
-                context.Entry(opera).State = EntityState.Modified;
-                context.SaveChanges();
                 return RedirectToAction("Index");
             }
-           
-            return View("Edit", opera);
-
+            List<Opera> operasYear= (from o in context.Operas
+                    where o.Year == year
+                    select o).ToList();
+            return View("Index", operasYear);
         }
-    }
 
+    }
 }

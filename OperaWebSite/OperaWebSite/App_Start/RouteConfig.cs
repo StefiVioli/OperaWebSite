@@ -12,21 +12,6 @@ namespace OperaWebSite
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            
-            //siempre arriba de la default
-            routes.MapRoute(
-               name: "Login",
-               url: "{controller}/{action}/{name}/{role}",
-               defaults: new { controller = "Test", action = "Login" }
-              );
-
-            routes.MapRoute(
-               name: "SearchByTitle",
-               url: "buscar/{title}",
-               //url: "{controller}/{action}/{title}",
-               defaults: new { controller = "Test", action = "SearchByTitle" }
-              );
-
 
             routes.MapRoute(
                 name: "Default",

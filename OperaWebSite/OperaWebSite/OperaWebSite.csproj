@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{040D87BF-9CF8-424A-B04D-9F2600B0DAC2}</ProjectGuid>
+    <ProjectGuid>{69791C97-F37B-46E3-AABC-87549A6F7E6A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -94,28 +94,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\main.css" />
     <Content Include="Global.asax" />
-    <Content Include="images\bannerColon.jpg" />
-    <Content Include="images\beethoven.jpg" />
-    <Content Include="images\chopin.jpg" />
-    <Content Include="images\exterior1.jpg" />
-    <Content Include="images\exterior2.jpg" />
-    <Content Include="images\exterior3.jpg" />
-    <Content Include="images\interior1.jpg" />
-    <Content Include="images\interior2.jpg" />
-    <Content Include="images\interior3.jpg" />
-    <Content Include="images\Mozart.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OperaController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Data\OperaDbContext.cs" />
     <Compile Include="Data\OperasInitializer.cs" />
-    <Compile Include="Filters\MyFilterAction.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,13 +125,6 @@
     <Content Include="Views\Opera\Create.cshtml" />
     <Content Include="Views\Opera\Detail.cshtml" />
     <Content Include="Views\Opera\Delete.cshtml" />
-    <Content Include="Views\Opera\Edit.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Test\Login.cshtml" />
-    <Content Include="Views\Test\SearchByTitle.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -169,9 +148,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53262</DevelopmentServerPort>
+          <DevelopmentServerPort>49331</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53262/</IISUrl>
+          <IISUrl>http://localhost:49331/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

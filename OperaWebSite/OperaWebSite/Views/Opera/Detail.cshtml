@@ -1,9 +1,11 @@
 ﻿@model OperaWebSite.Models.Opera
+<!DOCTYPE html>
 
-@{
-    ViewBag.Title = "Detail";
-}
-
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
 <body>
     <fieldset>
         <legend>Opera Detail</legend>
@@ -30,8 +32,7 @@
 
     </fieldset>
     <p>
-        @Html.ActionLink("Back to List", "Index", "Opera")
+        @Html.ActionLink("Back to List","Index","Opera")
     </p>
-
 </body>
-
+</html>
